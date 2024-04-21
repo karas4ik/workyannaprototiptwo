@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юрист Саратов</title>
+    <style>
+                             /* Set the viewport to enable responsive design */
+
+/* Style the header for smaller screens */
+@media screen and (max-width: 600px) {
+  header {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Style the nav for smaller screens */
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin-bottom: 10px;
+  }
+}
+
+/* Style the main content for smaller screens */
+@media screen and (max-width: 600px) {
+  main {
+    padding: 10px;
+  }
+
+  main h1 {
+    font-size: 1.5em;
+  }
+
+  .skills button {
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar a {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 0;
+  }
+
+  .show-sidebar {
+    display: none;
+  }
+}
+
+/* Style the contact form for smaller screens */
+@media screen and (max-width: 600px) {
+  .contact-form {
+    width: 100%;
+    max-width: none;
+  }
+
+  .contact-form label,
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+  }
+
+  .contact-form button {
+    width: 100%;
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+}
+        body {
+            background-color: #8C6495; /* Purple background color */
+            background-image: linear-gradient(to right, #ffffff, #3ee2c1);
+            color: rgb(112, 110, 110);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: rgb(189, 190, 248);
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        main h1 {
+            border-bottom: 2px solid rgb(140, 177, 233);
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .skills button {
+            background-color: rgb(96, 216, 231);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .sidebar {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: right 0.4s ease-out;
+            font-size: 1em;
+        }
+
+        
+
+        .sidebar a {
+            color: rgb(77, 78, 80);
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease-out;
+        }
+
+        .sidebar a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        .sidebar a:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar i {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .sidebar a:nth-child(1) {
+            white-space: nowrap; /* Prevent the section name from wrapping to the next line */
+            overflow: hidden; /* Hide any overflow */
+            text-overflow: ellipsis; /* Show ellipsis if the text overflows */
+        }
+
+        .show-sidebar {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .show-sidebar:focus {
+            outline: none;
+        }
+
+        .show-sidebar:focus ~ .sidebar {
+            right: 0;
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #b7f3f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #62ddb0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #84facf;
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-form {
+                margin-top: 30px;
+            }
+        }
+
+        #map {
+            width: 100%;
+            height: 300px;
+            margin: 50px auto; /* Add margin: auto for horizontal centering */
+            max-width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <button class="show-sidebar">☰</button>
+        <img src="prof.jpg" alt="пасхалко" class="profile-image">
+        <h1>ООО "Юридическая фирма "Гамбит"</h1>
+        <p>Будем рады увидеть Вас среди наших клиентов!</p>
+        <p>Звоните или пишите прямо сейчас!</p>
+    </header>
+    <nav>
+        <a href="#p4"></a>
+        <a href="#p0"></a>
+        <a href="#p1"></a>
+        <a href="#p2"></a>
+        <a href="#p3"></a>
+    </nav>
+    <div class = "sidebar">
+        <a href="#p4"> ᅠ ᅠ ᅠ ᅠ О нас</a>
+        <a href="#p0">Юридическая помощь организациям</a>
+        <a href="#p1">Юридическая помощь гражданам</a>
+        <a href="#p2">Этапы работы с клиентами</a>
+        <a href="#p3">Преимущества работы с нами</a>
+    </div>
+    <main>
+        <section id="p4">
+            <h1>Краткая информация</h1>
+            <h2>ООО "Юридическая фирма "Гамбит"</h2>
+            <h2>Адрес: 410080, г. Саратов, ул. Блинова, д. 18</h2>
+            <div id="map"></div>
+            <h2>Контакты:</h2>
+            <h2>тел: </h2>
+            <h2>e-mail: gambit64@internet.ru</h2>
+        </section>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=ace508f1-fa76-4114-9bd3-26475b0992d9&lang=ru_RU" type="text/javascript"></script>
+        <section id="p0">
+            <h1>Юридическая помощь организациям</h1>
+            <button id="skillsShowMore">Показать</button>
+            <ul id="skillsList" class="hidden">
+                <li> Арбитраж</li>
+                <li> Сопровождение бизнеса, абонентское обслуживание</li>
+                <li> Корпоративные споры</li>
+                <li> Налоговые споры</li>
+                <li> Регистрационные услуги (создание/ ликвидация ООО, изменение устава, ОКВЭД, адреса, директора и др.)</li>
+                <li> Коммерческие споры в сфере строительства (подряд, поставка)</li>
+                <li> Взыскание дебиторской задолженности</li>
+                <li> Исполнительное производство (предъявление исполнительных листов, представительство в службе судебных приставов, составление и подача жалоб, запросов, заявлений)</li>
+            </ul>
+        </section>
+        <section id="p1">
+            <h1>Юридическая помощь гражданам</h1>
+            <button id="skillsShowMore1">Показать</button>
+            <ul id="skillsList1" class="hidden">
+                <li> Юридические консультации</li>
+                <li> Составление исковых заявлений, жалоб, претензий</li>
+                <li> Составление договоров и иных правовых документов</li>
+                <li> Ведение гражданских дел в районных судах, у мировых судей</li>
+                <li> Семейные споры, бракоразводные процессы (развод, алименты, неустойка по   алиментам)</li>
+                <li> Защита прав потребителей</li>
+                <li> Взыскание долгов</li>
+                <li> Взыскание неустойки с застройщиков за несвоевременную сдачу жилья</li>
+            </ul>
+        </section>
+        <section id="p2" class="p2">
+            <h1>Этапы работы с клиентами</h1>
+            <h3>Предварительная бесплатная консультация по телефону</h3>
+            <h3>Изучение документов, оценка перспективы дела</h3>
+            <h3>Заключение договора на оказание юридических услуг</h3>
+            <h3>Работа по делу, ведение дела в суде</h3>
+        </section>
+        <section id="p3" class="p3">
+            <h1>Преимущество работы с нами</h1>
+            <ul>
+                <h2>I</h2>
+                <h3>Работаем на совесть, нацелены на результат</h3>
+                <h2>II</h2>
+                <h3>Разумные и доступные цены на юридические услуги</h3>
+                <h2>III</h2>
+                <h3>Не предоставляем невыполнимых обещаний и безусловных гарантий</h3>
+            </ul>
+        </section>
+    </main>
+    <div class="contact-form">
+        <h2>Обратная связь</h2>
+        <form id="contactForm">
+          <label for="name">Имя:</label><br>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <label for="subject">Тема:</label><br>
+          <input type="text" id="subject" name="subject" required><br>
+          <label for="message">Сообщение:</label><br>
+          <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    <footer>
+        Авторские права защищены © 2024
+    </footer>
+    <script>
+        ymaps.ready(function() {
+          var myMap = new ymaps.Map('map', {
+            center: [51.599496, 45.984840], // координаты центра карты
+            zoom: 15 // начальный уровень масштабирования
+          });
+      
+          // Создадим метку в центре карты
+          var myPlacemark = new ymaps.Placemark([51.599496, 45.984840], {
+            balloonContent: 'Метка в центре карты'
+          });
+      
+          // Добавим метку на карту
+          myMap.geoObjects.add(myPlacemark);
+        });
+    </script>
+    <script>
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = encodeURIComponent(contactForm.name.value);
+        const email = encodeURIComponent(contactForm.email.value);
+        const subject = encodeURIComponent(contactForm.subject.value);
+        const message = encodeURIComponent(contactForm.message.value);
+        const formData = `name=${name}&email=${email}&message=${message}`;
+        const mailtoLink = `mailto:ponja444@mail.ru?subject=${subject}&body=${formData}`;
+        window.location.href = mailtoLink;
+    });
+    </script>
+    <script>
+        // Get the sidebar and the show-sidebar button
+        const sidebar = document.querySelector('.sidebar');
+        const showSidebarBtn = document.querySelector('.show-sidebar');
+
+        // Set the initial state of the sidebar to hidden
+        sidebar.style.right = '-300px';
+
+        // Add an event listener to the show-sidebar button to show the sidebar
+        showSidebarBtn.addEventListener('click', () => {
+            // Toggle the sidebar between hidden and shown states
+            if (sidebar.style.right === '-300px') {
+                sidebar.style.right = '0';
+            } else {
+                sidebar.style.right = '-300px';
+            }
+        });
+        // Hide the sidebar when the user clicks outside of it
+        document.addEventListener('click', (e) => {
+            if (e.target !== sidebar && e.target !== showSidebarBtn) {
+                sidebar.style.right = '-300px';
+            }
+        });
+    </script>
+    <script>
+        // Get the necessary elements
+        const skillsShowMore = document.getElementById('skillsShowMore');
+        const skillsList = document.getElementById('skillsList');
+    
+        // Initially hide the skills list
+        skillsList.style.display = 'none';
+    
+        // Toggle the skills list Display
+        skillsShowMore.addEventListener('click', () => {
+            if (skillsList.style.display === 'none' || skillsList.style.display === '') {
+                skillsList.style.display = 'block';
+                skillsShowMore.textContent = 'Убрать';
+            } else {
+                skillsList.style.display = 'none';
+                skillsShowMore.textContent = 'Показать';
+            }
+        });
+    
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        // Get the necessary elements
+        const skillsShowMore1 = document.getElementById('skillsShowMore1');
+        const skillsList1 = document.getElementById('skillsList1');
+    
+        // Initially hide the skills list
+        skillsList1.style.display = 'none';
+    
+        // Toggle the skills list Display
+        skillsShowMore1.addEventListener('click', () => {
+            if (skillsList1.style.display === 'none' || skillsList1.style.display === '') {
+                skillsList1.style.display = 'block';
+                skillsShowMore1.textContent = 'Убрать';
+            } else {
+                skillsList1.style.display = 'none';
+                skillsShowMore1.textContent = 'Показать';
+            }
+        });
+    
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<body> 
+<html>
